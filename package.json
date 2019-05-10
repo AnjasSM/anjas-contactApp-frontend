@@ -4,9 +4,11 @@
   "description": "Simple Node Sandbox",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js localhost 8080"
+    "start": "nodemon server.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.4"
+  },
   "devDependencies": {
     "nodemon": "1.18.4"
   }
