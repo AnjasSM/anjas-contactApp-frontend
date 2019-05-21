@@ -10,5 +10,13 @@ app.listen(port, () => {
 app.use(express.static(__dirname))
 
 app.get("/",(req,res,next) => {
-    res.sendfile("index.html")
-})
+    res.sendfile("index")
+});
+
+app.get("/signup",(req,res,next) => {
+    res.sendfile("signup")
+});
+
+app.get("/signin",(req,res,next) => {
+    res.sendfile("signin")
+});
