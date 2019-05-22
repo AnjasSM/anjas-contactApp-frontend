@@ -117,7 +117,7 @@ document.addEventListener("click", e =>{
 
   //delete
   if(e.target.id == 'hapus'){
-    const id = e.target.attribute[1].value;
+    const id = e.target.attributes[1].nodeValue;
     if(confirm('Are You Sure To Delete This Contact?')) {
       fetch(`${baseUrl}${id}`,{
         method: 'DELETE'
@@ -129,7 +129,7 @@ document.addEventListener("click", e =>{
 
   //update
   if(e.target.id == 'edit') {
-    const id = e.target.attribute[1].value;
+    const id = e.target.attributes[1].nodeValue;
     fetch(`${baseUrl}${id}`)
     .then(res => res.json())
     .then(data => {

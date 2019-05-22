@@ -1,14 +1,14 @@
 //base url
 const baseUrl = "http://localhost:4000/users/"
 
-const isValid = (userName, email, password) => {
+const isValid = (username, email, password) => {
     const emailval = /^\w+([\.-]?\w+)*@\w+([\.-]?w+)*(\.\w{2,3})+$/;
     const upperCase = /[A-Z]/g;
     const lowerCase = /[a-z]/g;
     const numbers = /[0-9]/g;
     
-    if(userName !='' && email !='' && password !='') {
-      if(userName > 5 && email.length > 5 && password.length > 5){
+    if(username !='' && email !='' && password !='') {
+      if(username.length > 5 && email.length > 5 && password.length > 5){
           if(emailval.test(email)){
             if(upperCase.test(password) && lowerCase.test(password) && numbers.test(password)) {
               return true
@@ -44,7 +44,7 @@ const getInput = () =>{
   return input;
 }
 
-document.addEventListener("click", e => {
+document.addEventListener("click", function(e) {
   //click for signup btn
   if(e.target.id == "signup") {
     let input = getInput();
@@ -59,9 +59,11 @@ document.addEventListener("click", e => {
         },
         body: data
       })
-      .then(res => window.location ="/signin")
+      .then(res => window.location ="/signin.html")
+    } else {
+      console.log("post error")
     }
-  }
+  } 
 
   //click for cancel btn
   if(e.target.id == "cancel") {
